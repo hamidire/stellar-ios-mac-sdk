@@ -28,7 +28,7 @@ public class StellarSDK: NSObject {
     public var claimableBalances: ClaimableBalancesService
     
     public override init() {
-        horizonURL = "https://horizon-testnet.stellar.org"
+        horizonURL = KuknosGlobalConstants.Horizon.getURL()
         
         accounts = AccountService(baseURL: horizonURL)
         assets = AssetsService(baseURL: horizonURL)

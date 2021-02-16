@@ -7,6 +7,9 @@
 //
 
 import Foundation
+import Alamofire
+import ObjectMapper
+import SwiftyJSON
 
 /// An enum for HTTP methods
 enum HTTPMethod {
@@ -185,7 +188,11 @@ class ServiceHelper: NSObject {
         if let contentType = contentType {
             urlRequest.addValue(contentType, forHTTPHeaderField: "Content-Type")
         }
-
+        if let token = AccountHelper.token{
+            urlRequest.addValue(token, forHTTPHeaderField: "Authorization")
+        }
+        urlRequest.addValue(KuknosGlobalConstants.AppVersion.getString(), forHTTPHeaderField: "platform-version")
+        
         switch method {
         case .get:
             break

@@ -50,6 +50,8 @@ public final class StellarSDKLog {
             print("\(tag): Horizon request error of type request failed with message: \(message)")
         case .errorOnStreamReceive(let message):
             print("\(tag): Horizon request error of type request failed with message: \(message)")
+        case .customError(let code, let message):
+            print("\(tag): Horizon request error of type request failed with message: \(message)")
         }
     }
     

@@ -23,4 +23,5 @@ public enum HorizonRequestError: Error {
     case emptyResponse
     case parsingResponseFailed(message:String)
     case errorOnStreamReceive(message:String)
+    case customError(code: Int, message: String)
 }

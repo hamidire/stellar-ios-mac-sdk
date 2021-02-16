@@ -54,6 +54,8 @@ public class AccountResponse: NSObject, Decodable, TransactionAccount {
     public var sponsor:String?
     public var numSponsoring:Int
     public var numSponsored:Int
+    
+    public var userAgreement : Bool?
 
     // Properties to encode and decode
     enum CodingKeys: String, CodingKey {
@@ -105,6 +107,18 @@ public class AccountResponse: NSObject, Decodable, TransactionAccount {
             numSponsored = ns
         } else {
             numSponsored = 0
+        }
+        
+        if balances.count > 0{
+            userAgreement = false
+            if let temp = inflationDestination, temp == "GCGX6HG346FYLVVLFQXO6KIS7CXW6TA2U5LY5FVHAI6UULDJRI2WMXXI", let temp2 = homeDomain, temp2.lowercased().range(of: "www.kuknos.ir") != nil {
+                for balance in balances {
+                    if balance.assetCode == "SKYC"{
+                        userAgreement = true
+                        break
+                    }
+                }
+            }
         }
     }
     

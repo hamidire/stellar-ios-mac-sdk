@@ -22,9 +22,9 @@ extension Network {
     var networkId: Data {
         switch self {
         case .public:
-            return "Public Global Stellar Network ; September 2015".sha256Hash
+            return "Kuknos Foundation, Feb 2019".sha256Hash
         case .testnet:
-            return "Test SDF Network ; September 2015".sha256Hash
+            return "Kuknos-NET".sha256Hash
         case .custom(let networkId):
             return networkId.sha256Hash
         }

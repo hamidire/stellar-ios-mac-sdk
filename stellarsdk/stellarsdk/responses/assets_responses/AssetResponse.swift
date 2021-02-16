@@ -25,6 +25,10 @@ public class AssetResponse: NSObject, Decodable {
      /// The issuer of this asset. Nil if assetType is "native"
     public var assetIssuer:String?
     
+    public var whitepaper:String?
+        
+    public var refund: Bool?
+    
     /// The number of units of credit issued.
     public var amount:Decimal
     
@@ -47,6 +51,8 @@ public class AssetResponse: NSObject, Decodable {
         case numberOfAccounts = "num_accounts"
         case flags
         case pagingToken = "paging_token"
+        case whitepaper = "whitepaper"
+        case refund = "refund"
         
     }
     
@@ -66,6 +72,8 @@ public class AssetResponse: NSObject, Decodable {
         numberOfAccounts = try values.decode(Int.self, forKey: .numberOfAccounts)
         flags = try values.decode(AccountFlagsResponse.self, forKey: .flags)
         pagingToken = try values.decode(String.self, forKey: .pagingToken)
+        whitepaper = try values.decodeIfPresent(String.self, forKey: .whitepaper)
+        refund = try values.decode(Bool.self, forKey: .refund)
        
     }
 }

@@ -47,6 +47,10 @@
 		43E34B672031DCFB003104A9 /* OfferAssetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E34B662031DCFB003104A9 /* OfferAssetResponse.swift */; };
 		43E34B692031E243003104A9 /* OrderbookOfferResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E34B682031E243003104A9 /* OrderbookOfferResponse.swift */; };
 		43E34B6D2031E99D003104A9 /* PageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E34B6C2031E99D003104A9 /* PageResponse.swift */; };
+		4CA08C9625DBA0BD004570B0 /* KuknosGlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA08C9525DBA0BD004570B0 /* KuknosGlobalConstants.swift */; };
+		4CA08CA625DBC889004570B0 /* AccountHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA08CA525DBC889004570B0 /* AccountHelper.swift */; };
+		4CA08CAF25DBC907004570B0 /* Ditionary+ExtensionJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA08CAE25DBC907004570B0 /* Ditionary+ExtensionJson.swift */; };
+		4CA08CB825DBC953004570B0 /* RsaEncryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA08CB725DBC953004570B0 /* RsaEncryptor.swift */; };
 		741B8B4A203DE47A0098464A /* String+Encoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741B8B49203DE47A0098464A /* String+Encoding.swift */; };
 		743060C721380D7A00E2E9F2 /* SequenceBumpedEffectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743060C621380D7A00E2E9F2 /* SequenceBumpedEffectResponse.swift */; };
 		743060C821380D7A00E2E9F2 /* SequenceBumpedEffectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743060C621380D7A00E2E9F2 /* SequenceBumpedEffectResponse.swift */; };
@@ -1067,6 +1071,10 @@
 		43E34B662031DCFB003104A9 /* OfferAssetResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferAssetResponse.swift; sourceTree = "<group>"; };
 		43E34B682031E243003104A9 /* OrderbookOfferResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderbookOfferResponse.swift; sourceTree = "<group>"; };
 		43E34B6C2031E99D003104A9 /* PageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageResponse.swift; sourceTree = "<group>"; };
+		4CA08C9525DBA0BD004570B0 /* KuknosGlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KuknosGlobalConstants.swift; sourceTree = "<group>"; };
+		4CA08CA525DBC889004570B0 /* AccountHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountHelper.swift; sourceTree = "<group>"; };
+		4CA08CAE25DBC907004570B0 /* Ditionary+ExtensionJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ditionary+ExtensionJson.swift"; sourceTree = "<group>"; };
+		4CA08CB725DBC953004570B0 /* RsaEncryptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RsaEncryptor.swift; sourceTree = "<group>"; };
 		741B8B49203DE47A0098464A /* String+Encoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Encoding.swift"; sourceTree = "<group>"; };
 		743060C621380D7A00E2E9F2 /* SequenceBumpedEffectResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceBumpedEffectResponse.swift; sourceTree = "<group>"; };
 		743060C92138228200E2E9F2 /* DataCreatedEffectResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCreatedEffectResponse.swift; sourceTree = "<group>"; };
@@ -1709,6 +1717,14 @@
 			path = offer_responses;
 			sourceTree = "<group>";
 		};
+		4CA08C8D25DBA096004570B0 /* config */ = {
+			isa = PBXGroup;
+			children = (
+				4CA08C9525DBA0BD004570B0 /* KuknosGlobalConstants.swift */,
+			);
+			path = config;
+			sourceTree = "<group>";
+		};
 		743DF4DD201F121B00713DE7 /* account_responses */ = {
 			isa = PBXGroup;
 			children = (
@@ -1819,12 +1835,15 @@
 		743DF53F201F6A7A00713DE7 /* utils */ = {
 			isa = PBXGroup;
 			children = (
-				745F2BAB202C27CD008763F1 /* xdrCodable */,
-				7481B53F2024A419000A783E /* Order.swift */,
+				4CA08CA525DBC889004570B0 /* AccountHelper.swift */,
 				836972092028BA3E00398A98 /* Constants.swift */,
 				744148F7202E05AD006590BE /* DataTypes.swift */,
 				744D458B2038194300178D04 /* EventSource.swift */,
+				7481B53F2024A419000A783E /* Order.swift */,
 				833152122040CAAF007F8F84 /* StellarSDKLog.swift */,
+				745F2BAB202C27CD008763F1 /* xdrCodable */,
+				4CA08CAE25DBC907004570B0 /* Ditionary+ExtensionJson.swift */,
+				4CA08CB725DBC953004570B0 /* RsaEncryptor.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -1937,22 +1956,23 @@
 		7445E9FE201B106500470E0A /* stellarsdk */ = {
 			isa = PBXGroup;
 			children = (
-				8398C40724D8CA6500D6916C /* txrep */,
-				74723334219D97EC00343E25 /* web_authentication */,
-				7464B723219441B40029FDC8 /* toml */,
-				C6744C1A214670F9005DE204 /* uri_scheme */,
-				7467C3EF21424D0B00412FE1 /* transfer_server_protocol */,
-				744FC6F2212D3EA100ADFC88 /* federation */,
-				833CBFBD20337D1600C23CFE /* sdk */,
-				83DD2C5C202D04E100713FEE /* responses */,
+				4CA08C8D25DBA096004570B0 /* config */,
 				743DF5782020538A00713DE7 /* crypto */,
-				743DF5512020529500713DE7 /* libs */,
-				743DF544201F705300713DE7 /* extensions */,
-				743DF53F201F6A7A00713DE7 /* utils */,
-				743DF53C201F495A00713DE7 /* service */,
 				743DF4FE201F389500713DE7 /* errors */,
+				743DF544201F705300713DE7 /* extensions */,
+				744FC6F2212D3EA100ADFC88 /* federation */,
 				7445EA00201B106500470E0A /* Info.plist */,
+				743DF5512020529500713DE7 /* libs */,
+				83DD2C5C202D04E100713FEE /* responses */,
+				833CBFBD20337D1600C23CFE /* sdk */,
+				743DF53C201F495A00713DE7 /* service */,
 				743DF4DB201F0BBD00713DE7 /* StellarSDK.swift */,
+				7464B723219441B40029FDC8 /* toml */,
+				7467C3EF21424D0B00412FE1 /* transfer_server_protocol */,
+				8398C40724D8CA6500D6916C /* txrep */,
+				C6744C1A214670F9005DE204 /* uri_scheme */,
+				743DF53F201F6A7A00713DE7 /* utils */,
+				74723334219D97EC00343E25 /* web_authentication */,
 			);
 			path = stellarsdk;
 			sourceTree = "<group>";
@@ -2379,41 +2399,41 @@
 		833CBFBD20337D1600C23CFE /* sdk */ = {
 			isa = PBXGroup;
 			children = (
-				833CBFC02033804B00C23CFE /* TransactionAccount.swift */,
 				833CBFBE20337D3300C23CFE /* Account.swift */,
-				8345BA7F24706E4B00B07A34 /* MuxedAccount.swift */,
-				833CBFC82034741300C23CFE /* Asset.swift */,
-				833CBFD42036EF3100C23CFE /* Operation.swift */,
-				833CBFD62036F01700C23CFE /* CreateAccountOperation.swift */,
-				833CBFD82036F19000C23CFE /* PaymentOperation.swift */,
 				833CBFE62036F7C200C23CFE /* AccountMergeOperation.swift */,
+				833CBFE42036F73700C23CFE /* AllowTrustOperation.swift */,
+				833CBFC82034741300C23CFE /* Asset.swift */,
+				830E7D502529C1790059A4B4 /* BeginSponsoringFutureReservesOperation.swift */,
+				7468CDC92136C2EF002A538D /* BumpSequenceOperation.swift */,
+				833CBFE22036F6D500C23CFE /* ChangeTrustOperation.swift */,
+				83B4CB2725271BE400EEE55E /* Claimant.swift */,
+				83B4CB532527308500EEE55E /* ClaimClaimableBalanceOperation.swift */,
+				833CBFD62036F01700C23CFE /* CreateAccountOperation.swift */,
+				83B4CB492527291A00EEE55E /* CreateClaimableBalanceOperation.swift */,
+				833CBFDE2036F46100C23CFE /* CreatePassiveOfferOperation.swift */,
+				83379C2D2280CF9C00BD5F8E /* CreatePassiveSellOfferOperation.swift */,
+				830E7D5A2529C1930059A4B4 /* EndSponsoringFutureReservesOperation.swift */,
+				8345BA6F246FBE9400B07A34 /* FeeBumpTransaction.swift */,
+				83379C202280ABA600BD5F8E /* ManageBuyOfferOperation.swift */,
+				833CBFE82036F84F00C23CFE /* ManageDataOperation.swift */,
+				833CBFDC2036F2B500C23CFE /* ManageOfferOperation.swift */,
+				83379C1E2280AAF500BD5F8E /* ManageSellOfferOperation.swift */,
+				4390830820372BAF00254042 /* Memo.swift */,
+				4390830620372AF600254042 /* MemoProtocol.swift */,
+				8345BA7F24706E4B00B07A34 /* MuxedAccount.swift */,
+				744602E3203B22CC00D807C1 /* Network.swift */,
+				833CBFD42036EF3100C23CFE /* Operation.swift */,
 				833CBFDA2036F1E400C23CFE /* PathPaymentOperation.swift */,
 				83AFD634234FC59400A574D2 /* PathPaymentStrictReceiveOperation.swift */,
 				83AFD63C234FC60700A574D2 /* PathPaymentStrictSendOperation.swift */,
-				833CBFDC2036F2B500C23CFE /* ManageOfferOperation.swift */,
-				83379C1E2280AAF500BD5F8E /* ManageSellOfferOperation.swift */,
-				83379C202280ABA600BD5F8E /* ManageBuyOfferOperation.swift */,
-				833CBFDE2036F46100C23CFE /* CreatePassiveOfferOperation.swift */,
-				83379C2D2280CF9C00BD5F8E /* CreatePassiveSellOfferOperation.swift */,
-				833CBFE02036F4CF00C23CFE /* SetOptionsOperation.swift */,
-				833CBFE22036F6D500C23CFE /* ChangeTrustOperation.swift */,
-				833CBFE42036F73700C23CFE /* AllowTrustOperation.swift */,
-				833CBFE82036F84F00C23CFE /* ManageDataOperation.swift */,
-				7468CDC92136C2EF002A538D /* BumpSequenceOperation.swift */,
-				83B4CB492527291A00EEE55E /* CreateClaimableBalanceOperation.swift */,
-				83B4CB532527308500EEE55E /* ClaimClaimableBalanceOperation.swift */,
-				830E7D502529C1790059A4B4 /* BeginSponsoringFutureReservesOperation.swift */,
-				830E7D5A2529C1930059A4B4 /* EndSponsoringFutureReservesOperation.swift */,
-				830E7D722529C1B00059A4B4 /* RevokeSponsorshipOperation.swift */,
-				833CBFEC2038F9BB00C23CFE /* Transaction.swift */,
-				8345BA6F246FBE9400B07A34 /* FeeBumpTransaction.swift */,
-				4390830620372AF600254042 /* MemoProtocol.swift */,
-				4390830820372BAF00254042 /* Memo.swift */,
+				833CBFD82036F19000C23CFE /* PaymentOperation.swift */,
 				430BE2E5203577F200E6AB97 /* Price.swift */,
-				430BE2EA2035B4D400E6AB97 /* TimeBounds.swift */,
-				744602E3203B22CC00D807C1 /* Network.swift */,
+				830E7D722529C1B00059A4B4 /* RevokeSponsorshipOperation.swift */,
+				833CBFE02036F4CF00C23CFE /* SetOptionsOperation.swift */,
 				43AAA55020456B8C0039920E /* Signer.swift */,
-				83B4CB2725271BE400EEE55E /* Claimant.swift */,
+				430BE2EA2035B4D400E6AB97 /* TimeBounds.swift */,
+				833CBFEC2038F9BB00C23CFE /* Transaction.swift */,
+				833CBFC02033804B00C23CFE /* TransactionAccount.swift */,
 			);
 			path = sdk;
 			sourceTree = "<group>";
@@ -2485,23 +2505,23 @@
 		83DD2C5C202D04E100713FEE /* responses */ = {
 			isa = PBXGroup;
 			children = (
-				83B4CB932528766600EEE55E /* claimable_balances_responses */,
-				83FE810623F0719A00F4A13D /* fee_stats_responses */,
-				43D35B092034842E00C8BDBC /* payment_path_responses */,
-				4300C1802032F8BD00DC5E49 /* page_responeses */,
-				43E34B5F2031CE9D003104A9 /* offer_responses */,
-				43E34B5C2031BD09003104A9 /* orderbook_responses */,
 				743DF4DD201F121B00713DE7 /* account_responses */,
 				836971E92025055200398A98 /* assets_responses */,
+				83B4CB932528766600EEE55E /* claimable_balances_responses */,
 				7481B53C20234AD6000A783E /* effects_responses */,
+				83DD2C67202DE15400713FEE /* error_responses */,
+				83FE810623F0719A00F4A13D /* fee_stats_responses */,
 				836971FB202552DB00398A98 /* ledgers_responses */,
+				83DD2C9E202F27DC00713FEE /* links */,
+				43E34B5F2031CE9D003104A9 /* offer_responses */,
 				744C4DB3202A242B00B46CDE /* operations_responses */,
+				43E34B5C2031BD09003104A9 /* orderbook_responses */,
+				4300C1802032F8BD00DC5E49 /* page_responeses */,
+				43D35B092034842E00C8BDBC /* payment_path_responses */,
 				437D8A87202EFE880024D031 /* trades_aggregations_responses */,
 				437D8A7E202EEFBD0024D031 /* trades_responses */,
 				745F2BB4202C2E68008763F1 /* transactions_responses */,
 				830EFC5B2032412800607C35 /* xdr */,
-				83DD2C67202DE15400713FEE /* error_responses */,
-				83DD2C9E202F27DC00713FEE /* links */,
 			);
 			path = responses;
 			sourceTree = "<group>";
@@ -3613,6 +3633,7 @@
 				437D8A8B202F09630024D031 /* PagingLinksResponse.swift in Sources */,
 				8369720E2028EDB100398A98 /* AccountCreditedEffectResponse.swift in Sources */,
 				744FC6F7212D52D300ADFC88 /* FederationError.swift in Sources */,
+				4CA08CA625DBC889004570B0 /* AccountHelper.swift in Sources */,
 				43E34B652031DAD5003104A9 /* OfferPriceResponse.swift in Sources */,
 				746AD2BC20341DF100A9CF21 /* OperationResultXDR.swift in Sources */,
 				83AFD655234FD49000A574D2 /* PathPaymentStrictSendOperationResponse.swift in Sources */,
@@ -3731,6 +3752,7 @@
 				830E7E152529E9CE0059A4B4 /* DataSponsorshipUpdatedEffectResponse.swift in Sources */,
 				833CBFE12036F4CF00C23CFE /* SetOptionsOperation.swift in Sources */,
 				EC34A0CC20503CAB000FB042 /* BigInt+Extension.swift in Sources */,
+				4CA08C9625DBA0BD004570B0 /* KuknosGlobalConstants.swift in Sources */,
 				83697259202CB88300398A98 /* EffectLinksResponse.swift in Sources */,
 				745F2BB3202C287A008763F1 /* XDREncoder.swift in Sources */,
 				83DD2C71202DE8AD00713FEE /* NotFoundErrorResponse.swift in Sources */,
@@ -3840,6 +3862,7 @@
 				836972242028F62A00398A98 /* TrustlineRemovedEffectResponse.swift in Sources */,
 				830E7CC2252912C70059A4B4 /* BeginSponsoringFutureReservesResultXDR.swift in Sources */,
 				743DF5682020530A00713DE7 /* seed.c in Sources */,
+				4CA08CAF25DBC907004570B0 /* Ditionary+ExtensionJson.swift in Sources */,
 				43AEB4CE203ADEC10078637D /* Data+Base16.swift in Sources */,
 				8369724E202A803E00398A98 /* AccountMergeOperationResponse.swift in Sources */,
 				7464B7312194435F0029FDC8 /* ValidatorInformation.swift in Sources */,
@@ -3860,6 +3883,7 @@
 				836972302028F7AD00398A98 /* OfferUpdatedEffectResponse.swift in Sources */,
 				833CBFB2203354A500C23CFE /* LedgerKeyAccountXDR.swift in Sources */,
 				833CBFC12033804B00C23CFE /* TransactionAccount.swift in Sources */,
+				4CA08CB825DBC953004570B0 /* RsaEncryptor.swift in Sources */,
 				746AD2C220342CA700A9CF21 /* PathPaymentResultXDR.swift in Sources */,
 				833CBFE92036F84F00C23CFE /* ManageDataOperation.swift in Sources */,
 				437D8A7D202EEDCC0024D031 /* Dictionary+HttpParams.swift in Sources */,

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 /// An enum used to diferentiate between successful and failed resolve address responses.
 public enum ResolveResponseEnum {
@@ -118,13 +119,14 @@ public class Federation: NSObject {
             return
         }
         
-        let requestPath = "?q=\(account_id)&type=id"
+        let requestPath = "?q=\(account_id)&type=kyc"
         
         serviceHelper.GETRequestWithPath(path: requestPath) { (result) -> (Void) in
             switch result {
             case .success(let data):
                 do {
-                    let response = try self.jsonDecoder.decode(ResolveAddressResponse.self, from: data)
+                    let json = try JSON(data: data)
+                    let response = try self.jsonDecoder.decode(ResolveAddressResponse.self, from: json["data"].rawData())
                     completion(.success(response:response))
                 } catch {
                     completion(.failure(error: .parsingResponseFailed(message: error.localizedDescription)))
